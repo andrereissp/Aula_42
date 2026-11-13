@@ -1,4 +1,7 @@
 import { pool } from '../config/bancoDeDados.js';
+import { Tarefa } from '../models/tarefa.js';
+import { Usuario } from '../models/usuario.js';
+
 
 export const listarTarefas = async () => {
     const resultado = await pool.query('SELECT * FROM tarefas');
@@ -20,3 +23,14 @@ export const obterTarefasComUsuario = async () => {
     return rows;
 };
 
+export const listarTarefasSequelize = async () => {
+    return await Tarefa.findAll({
+        attributes: [ 'id', 'titulo', 'concluido'],
+        include: [{
+            Model: Usuario,
+            as: 'criador',
+            attributes: ['id', 'nome', 'email'],
+            required: true
+        }]
+    });
+};

@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../config/bancoDeDados";
+import { sequelize } from "../config/bancoDeDados.js";
 
 export const Usuario = sequelize.define('Usuario', {
     id: {
@@ -17,6 +17,6 @@ export const Usuario = sequelize.define('Usuario', {
         unique: true,
     },    
 }, {
-    tableName:  'usuarios',
+    tableName:  'usuario',
     timestamps: false
 });
