@@ -5,4 +5,4 @@ import { Tarefa } from "./tarefa.js";
 Usuario.hasMany(Tarefa, { foreignKey: 'usuario_id' });
 
 //Uma tarefa pertence a um usuàrio (N:1)
-Tarefa.belongsTo(Usuario, { foreignKey: 'usuario_id', as: 'criardor' });
+Tarefa.belongsTo(Usuario, { foreignKey: 'usuario_id', as: 'criador' });

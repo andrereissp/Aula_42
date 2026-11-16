@@ -7,15 +7,15 @@ export const Tarefa = sequelize.define('Tarefa',  {
         primaryKey: true,
         autoIncrement: true,
     },
-    titulo: {
+    titulos: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    concluir: {
+    concluido: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
     },
-    usuario: {
+    usuario_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
